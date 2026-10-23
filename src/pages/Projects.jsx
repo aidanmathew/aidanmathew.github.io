@@ -1,57 +1,95 @@
-import React from 'react'
-// import ProjectItem from "../components/ProjectItem"
-import Card from '@mui/material/Card'
+import React, { useState } from 'react'
 import '../styles/Projects.css'
 import { ProjectList } from '../dataHelpers/ProjectList'
-import { CardActionArea, CardContent, CardMedia } from '@mui/material'
-import { useNavigate } from 'react-router-dom'
+import ProjectCard from '../components/ProjectCard'
 
 function Projects() {
-  const navigate = useNavigate()
+  const [search, setSearch] = useState('')
+  const [category, setCategory] = useState('All')
+  const categories = [
+    'All',
+    ...new Set(ProjectList.map((project) => project.category)),
+  ]
+  const normalizedSearch = search.trim().toLowerCase()
+  const visibleProjects = ProjectList.filter((project) => {
+    const matchesCategory = category === 'All' || project.category === category
+    const searchableText = [
+      project.name,
+      project.summary,
+      project.category,
+      project.skills,
+    ]
+      .join(' ')
+      .toLowerCase()
+
+    return matchesCategory && searchableText.includes(normalizedSearch)
+  })
+
   return (
-    <div className="projects">
-      <h1>My Personal Projects</h1>
-      <div className="projectList">
-        {ProjectList.map((project, idx) => {
-          return (
-            <Card
-              className="projectItem"
-              id={idx}
-              name={project.name}
-              image={project.image}
-              key={project}
+    <main className="projects">
+      <header className="projects-heading">
+        <p className="section-marker">Projects</p>
+        <h1>Selected projects</h1>
+        <p>
+          A mix of data, software, embedded, machine-learning, and design
+          projects.
+        </p>
+      </header>
+      <section className="project-controls" aria-label="Filter projects">
+        <label className="project-search-label" htmlFor="project-search">
+          Search projects
+        </label>
+        <input
+          id="project-search"
+          type="search"
+          value={search}
+          onChange={(event) => setSearch(event.target.value)}
+          placeholder="Name, summary, category, or stack"
+        />
+        <div
+          className="project-filters"
+          role="group"
+          aria-label="Filter by category"
+        >
+          {categories.map((item) => (
+            <button
+              key={item}
+              type="button"
+              className="project-filter"
+              aria-pressed={category === item}
+              onClick={() => setCategory(item)}
             >
-              <CardActionArea
-                onClick={() => {
-                  navigate('/projects/' + idx)
-                }}
-              >
-                <CardMedia
-                  component="img"
-                  height="240"
-                  image={project.image}
-                  sx={{
-                    width: '240px',
-                    marginLeft: '30px',
-                  }}
-                />
-                <CardContent style={{ backgroundColor: 'white' }}>
-                  <p
-                    style={{
-                      color: 'rgba(57,0,86,1)',
-                      fontSize: '1.5rem',
-                      margin: '0',
-                    }}
-                  >
-                    {project.name}
-                  </p>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          )
-        })}
+              {item}
+            </button>
+          ))}
+        </div>
+        <p className="project-count" aria-live="polite">
+          {visibleProjects.length}{' '}
+          {visibleProjects.length === 1 ? 'project' : 'projects'}
+        </p>
+      </section>
+      <div className="projectList">
+        {visibleProjects.map((project) => (
+          <ProjectCard key={project.slug} project={project} />
+        ))}
       </div>
-    </div>
+      {visibleProjects.length === 0 && (
+        <div className="project-empty" role="status">
+          <h2>No projects found</h2>
+          <p>Try another search or category.</p>
+          <button
+            type="button"
+            className="project-reset"
+            onClick={() => {
+              setSearch('')
+              setCategory('All')
+            }}
+          >
+            Clear filters
+          </button>
+        </div>
+      )}
+    </main>
   )
 }
 

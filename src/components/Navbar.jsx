@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import '../styles/Navbar.css'
 import ReorderIcon from '@material-ui/icons/Reorder'
-import Resume from '../media/AidanCurrentResume.pdf'
 
 function Navbar() {
   const [expandNavbar, setExpandNavbar] = useState(false)
@@ -15,8 +14,18 @@ function Navbar() {
 
   return (
     <div className="navbar" id={expandNavbar ? 'open' : 'close'}>
+      <Link className="brand" to="/" aria-label="Aidan Mathew, home">
+        <span className="brand-mark">AM</span>
+        <span className="brand-name">Aidan Mathew</span>
+      </Link>
       <div className="toggleButton">
         <button
+          type="button"
+          aria-label={
+            expandNavbar ? 'Close navigation menu' : 'Open navigation menu'
+          }
+          aria-expanded={expandNavbar}
+          aria-controls="primary-navigation"
           onClick={() => {
             setExpandNavbar((prev) => !prev)
           }}
@@ -25,18 +34,15 @@ function Navbar() {
         </button>
       </div>
 
-      <div className="links">
-        <Link to="/"> Home </Link>
-        <Link to="/projects"> Projects </Link>
-        <Link to="/experience"> Experience </Link>
-        <a
-          href={Resume}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="pageLink"
-        >
+      <div className="links" id="primary-navigation">
+        <NavLink to="/" end>
+          Home
+        </NavLink>
+        <NavLink to="/projects">Projects</NavLink>
+        <NavLink to="/experience">Experience</NavLink>
+        <NavLink to="/resume" className="pageLink">
           Resume
-        </a>
+        </NavLink>
       </div>
     </div>
   )

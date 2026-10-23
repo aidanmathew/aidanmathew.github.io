@@ -1,0 +1,102 @@
+.experience-page {
+  min-height: 65vh;
+  padding: 3.5rem 1rem 5rem;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.experience-heading {
+  width: min(1100px, 100%);
+  margin: 0 auto 3rem;
+}
+
+.experience-heading .section-marker {
+  margin-bottom: 1rem;
+}
+
+.experience-heading h1 {
+  margin: 0;
+  font-size: clamp(2rem, 7vw, 3rem);
+}
+
+.experience-heading > p:last-child {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+}
+
+.experience .vertical-timeline {
+  width: min(1100px, 100%);
+  padding: 0;
+}
+
+.experience .vertical-timeline::before {
+  background: var(--line);
+}
+
+.experience .vertical-timeline-element-content {
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+  box-shadow: none;
+  color: var(--text);
+  background: var(--surface);
+}
+
+.experience .vertical-timeline-element-content img {
+  background: #fff;
+}
+
+.experience .vertical-timeline-element-content-arrow {
+  border-right-color: var(--surface);
+  border-left-color: var(--surface);
+}
+
+.experience .vertical-timeline-element-icon {
+  box-shadow: 0 0 0 4px var(--bg);
+}
+
+.experience .vertical-timeline-element-title {
+  color: var(--text);
+  font-size: 1.15rem;
+}
+
+.experience .vertical-timeline-element-subtitle {
+  color: var(--muted) !important;
+}
+
+.experience .vertical-timeline-element-content p {
+  line-height: 1.6;
+}
+
+.experience .vertical-timeline-element-content a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.origin-card .project-toggle {
+  margin-top: 0.75rem;
+}
+
+.origin-table {
+  width: 100%;
+  margin-top: 1rem;
+  border-collapse: collapse;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+}
+
+.origin-table * {
+  font-family: var(--mono);
+}
+
+.origin-table th,
+.origin-table td {
+  padding: 0.4rem 0.5rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.origin-table th {
+  color: var(--accent);
+  font-weight: 500;
+}

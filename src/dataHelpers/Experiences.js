@@ -10,10 +10,36 @@ import { GrReactjs } from 'react-icons/gr'
 
 export const ExperiencesList = [
   {
+    title: 'Associate Data Engineer',
+    subtitle: 'Toronto, Ontario',
+    date: 'June 2026 - Present',
+    description: 'Canadian Segment Data Office - Bank Data: ',
+    skills:
+      'Azure, ADF, Synapse, PowerBI, Databricks, Python, SQL, Git, Azure Data Lake Storage, Unity Catalog, Data Governance',
+    link: 'https://www.manulifebank.ca/personal-banking.html',
+    application: 'Manulife Bank Data Team',
+    img: MANULIFE,
+    icon: <Work />,
+  },
+
+  {
+    title: 'Associate Platform Reliability Engineer',
+    subtitle: 'Toronto, Ontario',
+    date: 'June 2025 - June 2026',
+    description:
+      'Enterprise Technology - Observability and Reliability Engineering: ',
+    skills: 'Moogsoft, New Relic, APM, PowerBI, ServiceNow, APIs, Postman',
+    link: 'https://www.manulife.com/ca/en/about-us/who-we-are/our-story',
+    application: 'Observability and Resiliency',
+    img: MANULIFE,
+    icon: <Work />,
+  },
+
+  {
     title: 'Software Engineer Co-op',
     subtitle: 'Toronto, Ontario',
-    date: 'May 2024 - August 2024',
-    description: 'Global Wealth and Asset Management - Cannadian Retirement - ',
+    date: 'May 2024 - April 2025',
+    description: 'Global Wealth and Asset Management - Canadian Retirement: ',
     skills: 'Java, Spring, React, Javascript',
     link: 'https://www.manulife.ca/business/group-retirement.html',
     application: 'Group Retirement Solutions',

@@ -1,114 +1,115 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
-
-:root {
-  --text: #fff;
-}
-
-* {
-  font-family: 'Roboto', sans-serif;
-  font-size: 400;
-}
-
 .navbar {
+  position: relative;
+  z-index: 2;
   width: 100%;
-  height: 100px;
-  background-color: #4158d0;
-  background-image: linear-gradient(
-    90deg,
-    rgba(255, 206, 23, 1) 0%,
-    rgba(255, 100, 100, 1) 50%
-  );
+  min-height: 72px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 0 var(--pad-x);
+  color: var(--text);
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  display: inline-grid;
+  place-items: center;
+  color: var(--on-accent);
+  background: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.85rem;
 }
 
 .links {
-  width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: white;
+  gap: 2rem;
 }
 
-.navbar a {
-  color: white;
-  text-decoration: none;
-  margin: 2rem;
-  font-size: 1.6rem;
+.navbar .links a {
+  position: relative;
+  padding: 0.65rem 0;
+  color: var(--text);
+  font-size: 0.95rem;
 }
 
-.navbar a:hover {
-  background: linear-gradient(
-    90deg,
-    rgba(57, 0, 86, 1) 0%,
-    rgba(78, 0, 71, 1) 100%
-  );
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.navbar .links a::after {
+  position: absolute;
+  right: 0;
+  bottom: 0.25rem;
+  left: 0;
+  height: 2px;
+  background: var(--accent);
+  content: '';
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 160ms ease;
+}
+
+.navbar .links a:hover::after,
+.navbar .links a:focus-visible::after,
+.navbar .links a[aria-current='page']::after {
+  transform: scaleX(1);
 }
 
 .toggleButton {
-  width: 100%;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  display: none;
 }
 
-.toggleButton svg {
-  font-size: 50px;
-}
 .toggleButton button {
-  margin-right: 20px;
-  background-color: transparent;
-  border: none;
-  color: white;
+  width: 44px;
+  height: 44px;
+  display: inline-grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--line);
+  color: var(--text);
+  background: transparent;
   cursor: pointer;
 }
 
-#open {
-  height: 100vh;
+.toggleButton svg {
+  font-size: 26px;
 }
 
-#open .links {
-  flex-direction: column;
-  justify-content: flex-start;
-  margin-top: 100px;
-}
-
-#open a {
-  width: 100%;
-  text-align: center;
-}
-
-@media only screen and (max-width: 900px) {
-  .navbar a {
-    width: 80vw;
-  }
-}
-
-@media only screen and (max-width: 600px) {
+@media (max-width: 650px) {
   .toggleButton {
     display: flex;
-  }
-  #close a {
-    display: none;
-  }
-}
-
-@media only screen and (min-width: 601px) {
-  .toggleButton {
-    display: none;
+    justify-content: flex-end;
   }
 
-  .hiddenLinks {
+  #close .links {
     display: none;
   }
 
   #open {
-    height: 100px;
+    min-height: 100vh;
+    align-content: start;
+    grid-template-rows: 72px auto;
   }
 
   #open .links {
-    flex-direction: row;
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.5rem 0 1rem;
+  }
+
+  #open .links a {
+    padding: 1rem 0;
+    border-top: 1px solid var(--line);
   }
 }

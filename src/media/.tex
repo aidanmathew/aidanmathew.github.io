@@ -1,0 +1,261 @@
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{xcolor}% http://ctan.org/pkg/xcolor
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  urlcolor=blue!85!black
+}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{tikz}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+% function that draws the link symbol
+\newcommand{\ExternalLink}{%
+    \tikz[x=1.2ex, y=1.2ex, baseline=-0.05ex]{% 
+        \begin{scope}[x=1ex, y=1ex]
+            \clip (-0.1,-0.1) 
+                --++ (-0, 1.2) 
+                --++ (0.6, 0) 
+                --++ (0, -0.6) 
+                --++ (0.6, 0) 
+                --++ (0, -1);
+            \path[draw, 
+                line width = 0.5, 
+                rounded corners=0.5] 
+                (0,0) rectangle (1,1);
+        \end{scope}
+        \path[draw, line width = 0.5] (0.5, 0.5) 
+            -- (1, 1);
+        \path[draw, line width = 0.5] (0.6, 1) 
+            -- (1, 1) -- (1, 0.6);
+        }
+    }
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Aidan Mathew} \\ \vspace{4pt}
+    \small 647-989-3736 $|$ \href{mailto:mathea40@mcmaster.ca}{mathea40@mcmaster.ca} $|$ 
+    \href{http://www.linkedin.com/in/Aidan-Mathew}
+    {https://www.linkedin.com/in/Aidan-Mathew}
+    $|$
+    \href{https://aidanmathew.github.io}{https://aidanmathew.github.io}
+\end{center}
+
+
+%-----------EDUCATION-----------
+%UNDERGRAD
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {McMaster University (M.B.A. Candidate)}{Sept. 2025 -- Apr. 2027 (Expected)}
+      {Master of Business Administration}{Burlington, ON}
+      \resumeItemListStart
+        \resumeItem{\textbf{GPA: 3.9/4.0} $|$ Accelerated, part-time program, specializing in Data Analytics.}
+        % \resumeItem{Teaching Assistant for 3 Engineering classes: ENGINEER 1P13, ENGINEER 2PX3, and ENGMGT 2AA3}
+        % \resumeItem{The Engineering and Management program
+        % produces business oriented engineers with an interest in leadership.}
+      \resumeItemListEnd
+    %UNDERGRAD
+    \resumeSubheading
+      {McMaster University (B.Eng.Mgt)}{Sept. 2020 -- Apr. 2025}
+      {Bachelor of Computer Engineering and Management}{Hamilton, ON}
+      \resumeItemListStart
+        \resumeItem{Summa Cum Laude $|$ \textbf{GPA: 3.7/4.0} $|$ McMaster Honor Award $|$ Dean's Honor List $|$ 8x Teaching Assistant}
+        % \resumeItem{Teaching Assistant for 3 Engineering classes: ENGINEER 1P13, ENGINEER 2PX3, and ENGMGT 2AA3}
+        % \resumeItem{The Engineering and Management program
+        % produces business oriented engineers with an interest in leadership.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+%-----------PROGRAMMING SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Programming}{: Python • JavaScript(React.js, Node.js) • SQL • Java • C/C++  • HTML5/CSS3 • Swift • Matlab/R} \\
+     \textbf{Tools}{: Git • Azure • ServiceNow • Databases (Realm, PgAdmin) • PowerBI •  • XCode • Moogsoft • New Relic}
+    }}
+ \end{itemize}
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    
+    \resumeSubheading
+      {\href{https://id.manulife.ca/sponsor/?ui_locales=en-CA}{Associate Full-stack Software Engineer - Platform Engineer \ExternalLink}}{Jun. 2025 -- Jun. 2026}
+      {Manulife - Observability and Resiliency}{Toronto, ON}
+      \resumeItemListStart
+        \resumeItem{Onboarded \textbf{10+} engineering teams to centralized incident management via Moogsoft, integrating alerts from various integrations, enabling faster incident correlation and reducing mean time to detection (MTTD)}
+        \resumeItem{Developed a \textbf{Power BI dashboard} for senior leadership to track key observability metrics, including alert ingestion, incident creation, MTTA, integrations breakdown, and team paging activity}
+        
+        % \resumeItem{Wrote \textbf{JUnit} tests for new Bulk Contribution agreement API, improving codebase test coverage by \textbf{2\%} through meticulous design and implementation of comprehensive test cases.}
+        % \resumeItem{Collaborated with cross-functional teams to enable Multi-Factor Authentication for \textbf{Azure} applications, adhering to changing company security standards, increasing application
+    \resumeItemListEnd
+
+    \resumeSubheading
+      {\href{https://id.manulife.ca/sponsor/?ui_locales=en-CA}{Software Engineer Co-op \ExternalLink}}{May. 2024 -- Aug. 2024}
+      {Manulife - GWAM Sponsor Samurai}{Toronto, ON}
+      \resumeItemListStart
+        \resumeItem{Updated the AdZone marketing content within the Sponsor Site React application by implementing JavaScript code changes over two repositories, generating a \textbf{30\% increase} in sponsor engagement.}
+        \resumeItem{Modified Sponsor Financial Summary Report stored procedure in Microsoft SQL Server, reducing query time from \textbf{33 min to 3 min}, successfully resolving production defects where queries exceeded the accepted time limit.}
+        % \resumeItem{Wrote \textbf{JUnit} tests for new Bulk Contribution agreement API, improving codebase test coverage by \textbf{2\%} through meticulous design and implementation of comprehensive test cases.}
+        % \resumeItem{Collaborated with cross-functional teams to enable Multi-Factor Authentication for \textbf{Azure} applications, adhering to changing company security standards, increasing application security and protecting user data.}
+        \resumeItem{Updated automated email stored procedure response, notifying Sponsors if a plan member has reached or exceeded the contribution limit, resulting in \textbf{increased sponsor awareness} and \textbf{compliance} with contribution limits.  }
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {\href{https://www.cibc.com/en/commercial.html}{Application Developer Co-op \ExternalLink}}{May. 2023 -- Aug. 2023}
+      {CIBC - Commercial Banking and Payments Techonology}{Toronto, ON}
+      \resumeItemListStart
+        \resumeItem{Created, closed, and managed \textbf{50+ change requests} in \textbf{ServiceNow}, documenting changes, conducting impact analysis, and developing implementation plans for streamlined change management.}
+        % \resumeItem{Collaborated with cross-functional teams to review and submit change requests, \textbf{assigning tasks to respective groups}, ensuring effective communication and minimal disruptions to services.}
+        \resumeItem{Presented new changes to the \textbf{Enterprise Change Management team}, demonstrating a deep understanding of the informed decision-making and approval processes regarding Fastlane change requests.}
+      \resumeItemListEnd
+    
+    \resumeSubheading
+      {\href{https://pointclickcare.com/industry-solutions/home-health-care/}{Software Engineer Co-op \ExternalLink}}{May. 2022 -- Aug. 2022}
+      {PointClickCare - Care at Home Clinical}{Mississauga, ON}
+      \resumeItemListStart
+        \resumeItem{Contributed to the development of a cutting-edge iOS application, leveraging \textbf{Swift} to devise innovative solutions for user-reported issues, resulting in an enhanced user experience and \textbf{increased customer satisfaction}.}
+        % \resumeItem{Defined, automated, and executed unit tests \textbf{(XCTest)}, to validate and verify the functionality of newly developed features, ensuring a high-quality and bug-free application.}
+        \resumeItem{Orchestrated the seamless migration of the \textbf{database schema (Realm)} to accommodate new property additions and changes during app version upgrades, ensuring uninterrupted functionality and data integrity.}
+        \resumeItem{Enhanced clinicians' ability to record patient data by implementing document questions into \textbf{25+ charting assessments}, streamlining data capture, and improving overall completeness.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {\href{https://marketplace.geotab.com}{Software Engineer Co-op \ExternalLink}}{May. 2021 -- Aug. 2021}
+      {Geotab Inc. - Web for Marketing}{Oakville, ON}
+      \resumeItemListStart
+        \resumeItem{Translated Figma designs into production-level code using \textbf{React.js}, enhancing overall user experience.}
+        \resumeItem{Leveraged \textbf{Geotab APIs} and adhered to \textbf{REST principles} to seamlessly fetch and integrate data from new table, enabling the creation of dynamic web pages with real-time information and enhanced functionality.}
+        % \resumeItem{Developed UNIT tests using \textbf{JEST} and \textbf{react testing library}, improving codebase coverage by \textbf{2\%}.}
+        % \resumeItem{Displayed quick learning to optimize workflow with \textbf{Gitlab} and \textbf{Jira}, following agile sprint methods (SCRUM).}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-------------Extracurricular----------
+% \section{Extracurricular}
+%   \resumeSubHeadingListStart
+%     \resumeSubheading
+%       {\href{https://dscmcmasteru.ca}{Web Developer Team Member \ExternalLink}}{Sept. 2021 -- Apr. 2022.}
+%       {Google Developer Student Club $|$ McMaster University}{Hamilton, ON}
+%       \resumeItemListStart
+%         \resumeItem{Regularly maintained the Google Club website, built on \textbf{Firebase}, \textbf{Gatsby}, \textbf{React}, styled with \textbf{Tailwind CSS}.}
+%         \resumeItem{Collaborated with a team of developers, practicing agile software development through weekly Kanban meetings.}
+%       \resumeItemListEnd
+
+%     \resumeSubheading
+%       {\href{https://github.com/McMasterAI/POST_study_Project}
+%       {POST Study Project Member \ExternalLink}}{Nov. 2021 -- Mar. 2022}
+%       {Artificial Intelligence Society $|$ McMaster University}{Hamilton, ON}
+%       \resumeItemListStart
+%         \resumeItem{Developed skills in \textbf{data cleaning}, parsing, and organization through the handling of large real world data sets.}
+%         \resumeItem{Utilized \textbf{ML techniques} to understand real world patterns and \textbf{develop models} regarding patient research.}
+%       \resumeItemListEnd
+%   \resumeSubHeadingListEnd
+%-----------PROJECTS-----------
+% \section{Projects}
+%     \resumeSubHeadingListStart
+%       \resumeProjectHeading
+%           {\textbf{\href{https://aidanmathew.github.io/}{Personal Website \ExternalLink}} $|$ \emph{Self-Taught}}{Jul. 2022 -- Aug. 2022}
+%           \resumeItemListStart
+%             \resumeItem{Designed a website built on \textbf{React.js}, styled with \textbf{Material-UI} to display all personal projects and experiences.}
+%             \resumeItem{ Applied multi-page functionality with \textbf{react-router-dom}, allowing for simple and efficient site navigation. }
+%           \resumeItemListEnd
+      
+      % \resumeProjectHeading
+      %     {\textbf{\href{https://devpost.com/software/the-covid-counter}{The Covid Counter \ExternalLink}} $|$ \emph{MacHacks} $|$ \emph{McMaster University}}{Jan. 2021 -- Feb. 2021}
+      %     \resumeItemListStart
+      %       \resumeItem{Implemented a \textbf{linear regression model} to predict the number of new COVID-19 cases in Ontario, Canada.}
+      %       \resumeItem{Employed \textbf{request libraries} to access CSV files, centralizing raw data with matplotlib to draw useful conclusions.}
+      %     \resumeItemListEnd
+    %\resumeSubHeadingListEnd
+
+%Interests
+\section{Interests}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+    \textbf{Looking to Learn}{: Data Engineering • Technical Project Management • Databricks • Docker • CI/CD • Golang • AWS • AI Engineering • Distributed Systems • Apache Spark • Data Pipelines (ETL) • ML • Agentic AI  \\
+    }
+    }}
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}
