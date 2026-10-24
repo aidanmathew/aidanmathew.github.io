@@ -2,110 +2,104 @@ import React from 'react'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import EmailIcon from '@material-ui/icons/Email'
 import GitHubIcon from '@material-ui/icons/GitHub'
-import TypeIt from 'typeit-react'
 import '../styles/Home.css'
 import Aidan from '../media/aidanPFP.jpg'
-import { Link } from '@material-ui/core'
+import { Link } from 'react-router-dom'
+import TypedLine from '../components/TypedLine'
+import SqlTerminal from '../components/SqlTerminal'
+import PipelineDiagram from '../components/PipelineDiagram'
+import SkillsMatrix from '../components/SkillsMatrix'
+
 function Home() {
   return (
-    <div className="home">
-      <div className="about">
-        <img className="aidanImage" src={Aidan} alt="" />
-
-        <h2>
-          {' '}
-          Hello! I'm <span className="gradient">Aidan</span>!{' '}
-        </h2>
-
-        <div className="prompt">
-          <p>
-            I am{' '}
-            <TypeIt
-              options={{
-                speed: 90,
-                waitUntilVisible: true,
-                loop: true,
-              }}
-              getBeforeInit={(instance) => {
-                instance
-                  .type('a Computer Engineer.')
-                  .pause(1000)
-                  .delete()
-                  .type('a Web Developer.')
-                  .pause(1000)
-                  .delete()
-                  .type('an Athlete.')
-                  .pause(1000)
-                  .delete()
-                  .type('a Software Developer.')
-                  .pause(1000)
-                  .delete()
-                  .type('a Problem Solver.')
-                  .pause(1000)
-                  .delete()
-                  .type('an Analytical Thinker.')
-                  .pause(1000)
-                  .delete()
-                // Remember to return it!
-                return instance
-              }}
-            ></TypeIt>
+    <main className="home">
+      <section className="home-hero">
+        <div className="hero-copy">
+          <div className="hero-id">
+            <img
+              className="hero-portrait"
+              src={Aidan}
+              alt="Portrait of Aidan Mathew"
+              width="140"
+              height="140"
+            />
+            <p className="eyebrow">
+              <span>Data engineering</span>
+              <span>Azure / Databricks / Python / SQL</span>
+            </p>
+          </div>
+          <h1>Aidan Mathew, Data Engineer</h1>
+          <TypedLine />
+          <p className="hero-intro">
+            I build data pipelines and warehouse models using Azure, Databricks,
+            Python, and SQL.
           </p>
-
-          <Link
-            href="http://www.linkedin.com/in/aidan-mathew"
-            target="_blank"
-            rel="noopener"
-          >
-            <LinkedInIcon />
-          </Link>
-
-          <Link href="mailto:mathea40@mcmaster.ca">
-            <EmailIcon />
-          </Link>
-
-          <Link href="https://github.com/aidanmathew">
-            <GitHubIcon />
-          </Link>
+          <div className="hero-actions">
+            <Link className="action-link action-link-primary" to="/projects">
+              Explore projects <span aria-hidden="true">↗</span>
+            </Link>
+            <Link className="action-link" to="/experience">
+              View experience <span aria-hidden="true">↗</span>
+            </Link>
+          </div>
+          <div className="social-links" aria-label="Social links">
+            <a
+              href="https://www.linkedin.com/in/aidan-mathew"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <LinkedInIcon />
+            </a>
+            <a href="mailto:mathea40@mcmaster.ca" aria-label="Email">
+              <EmailIcon />
+            </a>
+            <a
+              href="https://github.com/aidanmathew"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <GitHubIcon />
+            </a>
+          </div>
         </div>
-      </div>
+        <SqlTerminal />
+      </section>
 
-      <div className="skills">
-        <h1> About Me </h1>
-        <ol className="list">
-          <li className="item">
-            <span>
-              I am a final year Computer Engineering and Management student at
-              McMaster University. With a passion for technology, I have already
-              completed 16-months of co-op in 4 different industries, and I am
-              looking for full time positions starting May 2025. I created this
-              website after my first co-op term to continue to practice my web
-              development skills, while also using it to keep track of my
-              personal projects and previous work experiences. <br />
-              <br />
-              This portfolio is built on react.js, styled with Material-UI, and
-              implements multi-page functionality using react-router-dom for
-              simple and efficient site navigation. For simplicity, I have used
-              github pages for quick and easy deployments with every push to
-              github. <br />
-              <br />
-              I am eager to take on a challenging and rewarding role that will
-              set me up for success in my future career. With a passion for
-              software development and a proven track record of success, I
-              believe that I am the best fit for any SDE/SWE role.
-              <br />
-              <br />
-              Throughout my undergraduate career, I have gained extensive
-              experience in software development, project management, managing
-              timelines, and collaborating with cross-functional teams. In my
-              previous co-op roles, I have had the opportunity to work on
-              complex projects, consistently delivering high-quality work on
-              time.
-            </span>
-          </li>
-        </ol>
-      </div>
-    </div>
+      <section className="home-section" aria-labelledby="pipeline-title">
+        <p className="section-marker">01 / Pipeline</p>
+        <h2 id="pipeline-title">
+          How data moves, and what I use at each stage.
+        </h2>
+        <PipelineDiagram />
+      </section>
+
+      <section className="home-section" aria-labelledby="skills-title">
+        <p className="section-marker">02 / Skills</p>
+        <h2 id="skills-title">Skills and tools.</h2>
+        <SkillsMatrix />
+      </section>
+
+      <section className="home-section" aria-labelledby="about-title">
+        <p className="section-marker">03 / About</p>
+        <h2 id="about-title">A little about me.</h2>
+        <div className="about-copy">
+          <p>
+            I&apos;m a Computer Engineering and Management graduate from
+            McMaster University. During my degree, I completed 16 months of
+            co-op across four industries. I now work at Manulife in its new
+            graduate program; my rotations so far have been in platform
+            reliability engineering and data engineering.
+          </p>
+          <p>
+            I started this site after my first co-op to practice web development
+            and keep track of my projects and work experience. It&apos;s built
+            with React and React Router and deployed with GitHub Pages.
+          </p>
+        </div>
+      </section>
+    </main>
   )
 }
 

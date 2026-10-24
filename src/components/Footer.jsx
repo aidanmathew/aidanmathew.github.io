@@ -9,24 +9,42 @@ import '../styles/Footer.css'
 function Footer() {
   return (
     <div className="footer">
-      <p> Connect with me on social media!</p>
+      <p>
+        My work includes data engineering, software, embedded systems, and
+        design projects.
+      </p>
       <div className="socialMedia">
-        <Link href="https://www.linkedin.com/in/Aidan-Mathew/" target="_blank">
+        <Link
+          href="https://www.linkedin.com/in/Aidan-Mathew/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
           <LinkedInIcon />
         </Link>
 
-        <Link href="https://github.com/aidanmathew" target="_blank">
+        <Link
+          href="https://github.com/aidanmathew"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+        >
           <GithubIcon />
         </Link>
-        <Link href="https://www.instagram.com/aidan.math3w/" target="_blank">
+        <Link
+          href="https://www.instagram.com/aidan.math3w/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
           <InstagramIcon />
         </Link>
 
-        <Link href="mailto:mathea40@mcmaster.ca" target="_blank">
+        <Link href="mailto:mathea40@mcmaster.ca" aria-label="Email">
           <EmailIcon />
         </Link>
       </div>
-      <p> &copy; 2022 Aidan Mathew.</p>
+      <p> &copy; {new Date().getFullYear()} Aidan Mathew.</p>
     </div>
   )
 }

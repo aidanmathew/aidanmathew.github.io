@@ -1,57 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
-
-:root {
-  --textColor: #fff;
-}
-
-* {
-  font-family: 'Roboto', sans-serif;
-}
-
 .project {
-  width: 100%;
-
+  width: min(100%, 1000px);
+  min-height: 65vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  text-align: center;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin: 0 auto;
+  padding: 3.5rem 1.25rem 5rem;
+  color: var(--text);
 }
 
 .project h1 {
-  margin-top: 1.5rem;
-  color: var(--textColor);
-  font-size: 2rem;
-}
-.project img {
-  width: 90vw;
-  border-radius: 10px;
+  margin: 0;
+  font-size: clamp(2rem, 7vw, 3rem);
 }
 
-.project p {
-  font-size: 2.2rem;
-  color: var(--textColor);
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+.project > .project-icon {
+  width: min(100%, 560px);
+  height: 220px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
 }
 
-.project svg {
-  font-size: 5rem;
-  color: var(--textColor);
+.project > .project-tag {
+  margin-top: -0.25rem;
 }
 
-.project svg:hover {
-  color: rgba(57, 0, 86, 1);
+.project > .project-summary {
+  max-width: 760px;
+  font-size: 1.1rem;
 }
 
-@media only screen and (min-width: 800px) {
-  .project img {
-    width: 400px;
-  }
+.project-back,
+.project-visit {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent);
+  font-weight: 700;
 }
 
-@media only screen and (min-width: 1300px) {
-  .project img {
-    width: 50vw;
-  }
+.project-visit:hover,
+.project-back:hover {
+  text-decoration: underline;
+}
+
+.project-facts {
+  max-width: 760px;
+  margin: 0;
+}
+
+.project-facts dt {
+  margin-top: 1rem;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.project-facts dd {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
 }
