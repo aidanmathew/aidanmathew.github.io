@@ -88,9 +88,11 @@ function Home() {
           <p>
             I&apos;m a Computer Engineering and Management graduate from
             McMaster University. During my degree, I completed 16 months of
-            co-op across four industries. I now work at Manulife in its new
-            graduate program; my rotations so far have been in platform
-            reliability engineering and data engineering.
+            co-op across four industries. I joined Manulife&apos;s new graduate
+            program in 2025, completed a rotation in platform reliability
+            engineering, and now work as an Associate Data Engineer on the
+            Manulife Bank data team, building data pipelines and warehouse
+            models with Azure, Databricks, Python, and SQL.
           </p>
           <p>
             I started this site after my first co-op to practice web development

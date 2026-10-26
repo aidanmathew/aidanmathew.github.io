@@ -107,9 +107,9 @@ The `homepage` field in `package.json` is configured for `https://aidanmathew.gi
 npm run deploy
 ```
 
-This runs `npm run build` first, then uses `gh-pages` to publish the `build/` directory. This command deploys; do not run it for local development.
+This runs `npm run build`, creates `build/404.html` from the generated `index.html` for client-side routes, then uses `gh-pages` to publish the `build/` directory. This command deploys; do not run it for local development.
 
-The app currently uses `BrowserRouter`. GitHub Pages does not automatically serve the SPA for every deep URL, so directly refreshing a route such as `/projects/0` may return a 404 unless a Pages fallback is configured. Verify deep-link behavior on the published site.
+The app uses `BrowserRouter`. The generated `404.html` lets GitHub Pages serve the React app when a visitor opens or refreshes a route such as `/resume` directly.
 
 ## Technology
 

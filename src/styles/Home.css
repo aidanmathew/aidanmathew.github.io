@@ -1,7 +1,9 @@
 .home {
   background-color: var(--bg);
-  background-image: linear-gradient(rgba(45, 212, 191, 0.04) 1px,
-      transparent 1px),
+  background-image: linear-gradient(
+      rgba(45, 212, 191, 0.04) 1px,
+      transparent 1px
+    ),
     linear-gradient(90deg, rgba(45, 212, 191, 0.04) 1px, transparent 1px);
   background-size: 40px 40px;
 }

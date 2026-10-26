@@ -79,11 +79,7 @@ export const AdditionalSkills = [
     group: 'Looking to Learn',
     category: 'Learning',
   },
-  {
-    name: 'Data Pipelines (ETL)',
-    group: 'Looking to Learn',
-    category: 'Learning',
-  },
+  { name: 'ML', group: 'Looking to Learn', category: 'Learning' },
   { name: 'Agentic AI', group: 'Looking to Learn', category: 'Learning' },
 ]
 
